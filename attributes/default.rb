@@ -1,0 +1,6 @@
+default['oracle_weblogic']['s3_bucket'] = 'pipeline-artifacts'
+default['oracle_weblogic']['java_s3_folder'] = 'Oracle-jdk'
+default['oracle_weblogic']['wls_s3_folder'] = 'Oracle-Weblogic'
+default['oracle_weblogic']['s3_region'] = 'us-gov-west-1'
+default['oracle_weblogic']['java_file'] = 'jdk-8u162-windows-x64.exe'
+default['oracle_weblogic']['wls_file'] = 'fmw_12.2.1.3.0_infrastructure.jar'

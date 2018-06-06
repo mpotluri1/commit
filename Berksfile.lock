@@ -1,0 +1,14 @@
+DEPENDENCIES
+  Windows_Oracle_Weblogic
+    path: .
+    metadata: true
+  s3_file
+    git: https://github.com/reancloud/s3_file.git
+    revision: 904bcf943c5d562e75d91e0cc9dbe34dfc3ab89d
+  windows
+
+GRAPH
+  Windows_Oracle_Weblogic (0.1.0)
+    s3_file (= 2.8.1)
+  s3_file (2.8.1)
+  windows (4.2.5)

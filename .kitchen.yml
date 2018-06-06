@@ -1,0 +1,37 @@
+---
+driver:
+  name: ec2
+  region: us-gov-west-1
+  subnet_id: subnet-9d1a2ef8
+  security_group_ids: ["sg-7c30f218"]
+  aws_ssh_key_id: manvi_stig
+  iam_profile_name: s3_access  
+  tags:
+    Owner: manvitha.potluri
+    Environment: Development
+    Project: ustc
+    ExpirationDate: "2018/06/10"
+
+transport:
+  ssh_key: /Users/reancloudemployee/Documents/documents/manvi_stig.pem
+verifier:
+  name: inspec
+
+platforms:
+  - name: USTC-windows-stigs-weblogic
+    driver:
+      instance_type: t2.large
+      image_id: ami-e463f485
+      tags:
+        Name: dev-USTC-Windows-2012-MS
+      user_data: ./.user_data_windows.ps1
+    transport:
+      user: Administrator
+      name: winrm
+      password: 'password@123'
+
+suites:
+  - name: default
+    run_list:
+      - recipe[Windows_Oracle_Weblogic::default]
+     
